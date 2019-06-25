@@ -39,10 +39,7 @@ class Model(nn.Module):
     x = F.relu(self.fc2(x))
     return x
   
-
-  
 model = Model()
-
 
 #LOSS
 criterion = nn.CrossEntropyLoss()
@@ -67,12 +64,3 @@ for epoch in range(2):
       running_loss = 0.0
 
 print('Finished Training')
-
-      
-    
-    
-    
-    
-
-
-
