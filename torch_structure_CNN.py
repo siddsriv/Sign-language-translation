@@ -25,16 +25,15 @@ class Model(nn.Module):
   def __init__(self):
     super(Model, self).__init__()
     self.conv1 = nn.Conv2d(3, 6, 3)    #(in_filters, out_filters, kernel_shape)
-    self.pool1 = nn.MaxPool2d(2,2)
+    self.pool = nn.MaxPool2d(2,2)
     self.conv2 = nn.Conv2d(6, 10, 3)
-    self.pool2 = nn.MaxPool2d(2,2)
     self.fc1 = nn.Linear(-1, 120)
     self.fc2 = nn.Linear(-1, 26)
     
   def forward(self, x):
     x = self.pool(F.relu(self.conv1(x)))
     x = self.pool(F.relu(self.conv2(x)))
-    x = x.view(-1, -1) #figure dimensions
+    x = x.view(-1, -1) #figure out dimensions
     x = F.relu(self.fc1(x))
     x = F.relu(self.fc2(x))
     return x
