@@ -10,7 +10,7 @@ from torchvision import transforms, datasets
 import torchvision.transforms as transforms
 
 #load data 
-datadir = 'C:\Users\Admin\Desktop\Sign_language_translation\train\train'
+datadir = r'C:\Users\Admin\Desktop\Sign_language_translation\train\train'
 transform = transforms.Compose([transforms.Resize(255),
                                 transforms.CenterCrop(224),
                                 transforms.ToTensor()])
