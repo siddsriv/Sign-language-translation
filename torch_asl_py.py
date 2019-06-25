@@ -19,7 +19,7 @@ from torchvision import datasets, models, transforms
 import torchvision.transforms as transforms
 
 #load data
-
+#To-do
 
 class Model(nn.Module):
   def __init__(self):
@@ -34,7 +34,7 @@ class Model(nn.Module):
   def forward(self, x):
     x = self.pool(F.relu(self.conv1(x)))
     x = self.pool(F.relu(self.conv2(x)))
-    x = x.view(-1, -1)
+    x = x.view(-1, -1) #figure dimensions
     x = F.relu(self.fc1(x))
     x = F.relu(self.fc2(x))
     return x
